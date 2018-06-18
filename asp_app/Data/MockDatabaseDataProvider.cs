@@ -6,9 +6,9 @@ using ComputingService.Data.Interfaces;
 
 namespace ComputingService.Data
 {
-    public class MockDatabaseDataProvider : IDataProvider
-    {
-		private readonly Dictionary<Guid,Calculation> _mockDB = new Dictionary<Guid, Calculation>();
+	public class MockDatabaseDataProvider : IDataProvider
+	{
+		private readonly Dictionary<Guid, Calculation> _mockDB = new Dictionary<Guid, Calculation>();
 
 		Task<Guid> IDataProvider.SaveResult(string result)
 		{

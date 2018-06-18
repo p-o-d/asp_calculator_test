@@ -10,8 +10,8 @@ namespace ComputingService.Controllers
 	[Route("api/[controller]")]
 	public class ResultsController : Controller
 	{
-		private readonly IResultsRepository _resultsRepository;
 		private readonly ILogger<ResultsController> _logger;
+		private readonly IResultsRepository _resultsRepository;
 
 		public ResultsController(IResultsRepository resultsRepository, ILogger<ResultsController> logger)
 		{
@@ -32,7 +32,7 @@ namespace ComputingService.Controllers
 			catch (Exception e)
 			{
 				_logger.LogError(e, $"Error: {e.Message}");
-				var responce = new Dictionary<string, string> { { "error", e.Message } };
+				var responce = new Dictionary<string, string> {{"error", e.Message}};
 				return new JsonResult(responce);
 			}
 		}

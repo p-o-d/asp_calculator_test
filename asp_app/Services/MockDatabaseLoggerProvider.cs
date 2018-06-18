@@ -2,15 +2,15 @@
 
 namespace ComputingService.Services
 {
-    public class MockDatabaseLoggerProvider : ILoggerProvider
-    {
-	    public void Dispose()
-	    {
-	    }
+	public class MockDatabaseLoggerProvider : ILoggerProvider
+	{
+		public void Dispose()
+		{
+		}
 
-	    public ILogger CreateLogger(string categoryName)
-	    {
-		    return new MockDatabaseLogger();
-	    }
-    }
+		public ILogger CreateLogger(string categoryName)
+		{
+			return new MockDatabaseLogger();
+		}
+	}
 }

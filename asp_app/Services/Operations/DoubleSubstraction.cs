@@ -1,12 +1,12 @@
-﻿
-namespace ComputingService.Services.Operations
+﻿namespace ComputingService.Services.Operations
 {
-    public class DoubleSubstraction : BinaryOperationBase<double>
-    {
-	    public override string Name => "sub";
-	    public override double Compute()
-	    {
-		    return Left - Right;
-	    }
-    }
+	public class DoubleSubstraction : BinaryOperationBase<double>
+	{
+		public override string Name => "sub";
+
+		public override double Compute()
+		{
+			return Left - Right;
+		}
+	}
 }

@@ -7,26 +7,26 @@ using Microsoft.Extensions.Logging;
 
 namespace ComputingService.Controllers
 {
-    [Route("api/[controller]")]
-    public class CalcController : Controller
-    {
-	    private readonly ICalculatorService _calculator;
-	    private readonly IResultsRepository _resultsRepository;
-	    private readonly ILogger<CalcController> _logger;
+	[Route("api/[controller]")]
+	public class CalcController : Controller
+	{
+		private readonly ICalculatorService _calculator;
+		private readonly ILogger<CalcController> _logger;
+		private readonly IResultsRepository _resultsRepository;
 
 
 		public CalcController(ICalculatorService calculator,
 			IResultsRepository resultsRepository,
 			ILogger<CalcController> logger)
-	    {
-		    _calculator = calculator;
-		    _resultsRepository = resultsRepository;
-		    _logger = logger;
-	    }
+		{
+			_calculator = calculator;
+			_resultsRepository = resultsRepository;
+			_logger = logger;
+		}
 
 		// GET api/calc?left={DOUBLE_VAL}&right={DOUBLE_VAL}&operation={add|sub|mul|div|exp}
 		[HttpGet]
-        public async Task<IActionResult> GetAsync(string left, string right, string operation)
+		public async Task<IActionResult> GetAsync(string left, string right, string operation)
 		{
 			var responce = new Dictionary<string, string>();
 			try
@@ -45,5 +45,5 @@ namespace ComputingService.Controllers
 				return new JsonResult(responce);
 			}
 		}
-    }
+	}
 }
